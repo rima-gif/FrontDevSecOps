@@ -1,0 +1,39 @@
+<h2>Foyer Management</h2>
+
+<!-- Form for Add/Edit -->
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nomFoyer">Name:</label>
+    <input type="text" id="nomFoyer" [(ngModel)]="selectedFoyer.nomFoyer" name="nomFoyer" required>
+  </div>
+  <div>
+    <label for="capaciteFoyer">Capacity:</label>
+    <input type="number" id="capaciteFoyer" [(ngModel)]="selectedFoyer.capaciteFoyer" name="capaciteFoyer" required>
+  </div>
+  <button type="submit">{{ isEditMode ? 'Update' : 'Add' }} Foyer</button>
+  <button type="button" (click)="resetForm()">Cancel</button>
+</form>
+
+<!-- List of Foyers -->
+<h3>Foyer List</h3>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Capacity</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let foyer of foyers">
+      <td>{{ foyer.idFoyer }}</td>
+      <td>{{ foyer.nomFoyer }}</td>
+      <td>{{ foyer.capaciteFoyer }}</td>
+      <td>
+        <button (click)="onSelect(foyer)">Edit</button>
+        <button (click)="onDelete(foyer.idFoyer!)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
