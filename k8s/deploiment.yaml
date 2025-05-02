@@ -1,17 +1,21 @@
-apiVersion: apps/v
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: angular-frontend
+  name: frontapp
   labels:
-    app: angualr-frontend
+    app: frontapp
 spec:
-  replicas: 2
-  selector : 
+  replicas: 
+  selector: 2
     matchLabels:
-      app: angular-frontend
+      app: frontapp
+  template:
+    metadata:
+      labels:
+        app: frontapp
     spec:
       containers:
-        - name: angular-frontend
-          image: rima603/frontdevops:latest
-          ports:
-            - containerPort: 80
+      - name: frontapp
+        image: rima603/frontdevops:latest
+        ports:
+        - containerPort: 80
