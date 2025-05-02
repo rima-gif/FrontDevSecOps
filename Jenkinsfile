@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+      agent { label 'jenkins-Agent' }
 
     environment {
         SONAR_PROJECT_KEY = 'frontdevops'
