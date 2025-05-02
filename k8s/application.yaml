@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/rima-gif/FrontDevSecOps
     targetRevision: HEAD
-    path: K8s
+    path: k8s
 
   destination: 
     server: https://kubernetes.default.svc
