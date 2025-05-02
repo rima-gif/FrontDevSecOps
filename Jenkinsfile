@@ -7,9 +7,7 @@ pipeline {
         DOCKER_TAG = "latest"
     }
 
-    tools {
-        nodejs 'Node18'        
-    }
+
 
     stages {
         stage('Checkout') {
