@@ -1,9 +1,7 @@
 pipeline {
     agent { label 'jenkins-Agent' }
 
-    tools {
-        nodejs 'Node18'  // ou celui que tu as configuré
-    }
+   
 
     environment {
         SONAR_PROJECT_KEY = 'frontdevops'
