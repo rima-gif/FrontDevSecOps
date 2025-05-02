@@ -8,13 +8,13 @@ pipeline {
     }
 
     tools {
-        nodejs 'Node18'        // Node.js installé dans Jenkins (à adapter à ton nom d'installation)
+        nodejs 'Node18'        
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/rimaachour/front'
+                git branch: 'main', url: 'https://github.com/rima-gif/FrontDevSecOps'
             }
         }
 
