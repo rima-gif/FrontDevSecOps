@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/rima-gif/frontdevops
+    repoURL: https://github.com/rima-gif/FrontDevSecOps
     targetRevision: HEAD
     path: K8s
 
