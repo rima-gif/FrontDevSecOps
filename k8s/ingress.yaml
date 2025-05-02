@@ -1,25 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: angular-frontend-ingress
-  annotations : 
+  name: frontapp-ingress
+  annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect : "true"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
-
 spec:
-  tls: 
-    - hosts: 
-        - frontend.mondomaine.com
-      secretName: angular-frontend-tls
   rules:
-    - host: frontend.mondomaine.com
-      http:
-        paths: 
-          - path: /
-            pathType: Prefix
-            backend:
-              service: 
-                name: angular-frontend-service
-                port:
-                  number: 80
+  - host: front.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontapp-service
+            port:
+              number: 80
