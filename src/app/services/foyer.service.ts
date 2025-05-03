@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Foyer } from '../models/foyer';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class FoyerService {
-  private apiUrl = 'http://localhost:8039/foyer/foyer'; // Will be used in Docker Compose
+  private apiUrl = environment.apiUrl;
+
+  //private apiUrl = 'http://localhost:8039/foyer/foyer'; // Will be used in Docker Compose
 
   constructor(private http: HttpClient) { }
 
