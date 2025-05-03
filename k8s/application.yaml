@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myFront-argo-application
+  name: myfront-argo-application        # tout en minuscules
   namespace: argocd
-spec: 
+spec:
   project: default
 
   source:
@@ -11,13 +11,13 @@ spec:
     targetRevision: HEAD
     path: k8s
 
-  destination: 
+  destination:
     server: https://kubernetes.default.svc
     namespace: front
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
