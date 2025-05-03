@@ -5,8 +5,8 @@ metadata:
   labels:
     app: frontapp
 spec:
-  replicas: 
-  selector: 2
+  replicas: 2
+  selector:
     matchLabels:
       app: frontapp
   template:
@@ -15,7 +15,7 @@ spec:
         app: frontapp
     spec:
       containers:
-      - name: frontapp
-        image: rima603/frontdevops:latest
-        ports:
-        - containerPort: 80
+        - name: frontapp
+          image: rima603/frontdevops:latest
+          ports:
+            - containerPort: 80
